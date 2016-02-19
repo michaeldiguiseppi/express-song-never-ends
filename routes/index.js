@@ -15,10 +15,3 @@ router.get('/:verse?', function(req, res, next) {
 });
 
 module.exports = router;
-
-
-
-
-
-
-
