@@ -7,11 +7,13 @@ var router = express.Router();
 
 router.get('/:verse?', function(req, res, next) {
     var verse = req.params.verse;
+    var verseRender;
     if (verse) {
-        routes['/' + verse](req, res);
+        verseRender = routes['/' + verse](req, res);
     } else {
-        routes['/'](req, res);
+        verseRender = routes['/'](req, res);
     }
+    res.render('index', verseRender);
 });
 
 module.exports = router;
